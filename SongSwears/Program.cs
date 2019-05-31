@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SongSwears
@@ -12,44 +10,28 @@ namespace SongSwears
     {
         static void Main(string[] args)
         {
-            //var songAnalysis = new SongAnalysis("Kazik", "12 groszy");
-            var tekst = "Programowanie jest w chuj fajne";
-            var censor = new Censor();
-            Console.WriteLine(censor.Fix(tekst));
-            Console.ReadLine();
+            var eminemSwearStats = new SwearStats();
+            var song = new Song("Eminem", "Star");
+            eminemSwearStats.AddSwearsFrom(song);
+            //var censor = new Censor();
+            //Console.WriteLine(censor.Fix(song.lyrics));
+            //Console.ReadLine();
         }
     }
 
-    internal class Censor
-    {
-        string[] badWords;
-        public Censor()
-        {
-            var profanitiesfile = File.ReadAllText("profanities.txt");
-            profanitiesfile = profanitiesfile.Replace("*", "");
-            profanitiesfile = profanitiesfile.Replace("(", "");
-            profanitiesfile = profanitiesfile.Replace(")", "");
-            profanitiesfile = profanitiesfile.Replace("\"", "");
-            badWords = profanitiesfile.Split(',');
+     class SwearStats:Censor
+    { 
 
-        }
 
-        internal string Fix(string tekst)
+        Dictionary<string, int> przeklenstwa = new Dictionary<string, int>();
+
+
+        public void AddSwearsFrom(Song song)
         {
             foreach (var word in badWords)
             {
-                tekst = ReplaceBadWord(tekst,word);
+                var occurences = song.CountOccurences(word);
             }
-            //Regular Expressions
-            return tekst;
         }
-        
-        private string ReplaceBadWord(string tekst, string word)
-        {
-            var pattern = "\\b" + word + "\\b";
-            return Regex.Replace(tekst, pattern, "_________", RegexOptions.IgnoreCase);
-            
-        }
-        
     }
 }
