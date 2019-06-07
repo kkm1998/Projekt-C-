@@ -2,10 +2,9 @@
 using System;
 using System.Net;
 using System.Text.RegularExpressions;
-
 namespace SongSwears
 {
-     class Song
+     public class Song
     {
         public string title;
         public string artist;

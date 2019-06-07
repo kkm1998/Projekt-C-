@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace SongSwears
 {
-     class Censor
+     public class Censor
     {
          protected string[] badWords;
         public Censor()
