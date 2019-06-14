@@ -31,8 +31,8 @@ namespace SongSwears
             {
                 if (anotherStats.przeklenstwa.ContainsKey(myWord.Key))
                     score++;
-                else
-                    score--;
+               // else
+                   // score--;
             }
             return score;
         }

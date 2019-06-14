@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SearchingCurses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,14 +11,17 @@ namespace SongSwears
     {
         static void Main(string[] args)
         {
+            
             var eminemSwearStats = new RapperSwearStats("Eminem");
             eminemSwearStats.AddSong("Stan");
-
+            eminemSwearStats.AddSong("Rap God");
+            eminemSwearStats.AddSong("Lose Yourself");
             //var song = new Song("Eminem", "Stan");
             //eminemSwearStats.AddSwearsFrom(song);
             var twoPackStats = new RapperSwearStats("2Pac");
             twoPackStats.AddSong("Changes");
-
+            twoPackStats.AddSong("Dear Mama");
+            twoPackStats.AddSong("Hail Mary");
             var rappers = new List<RapperSwearStats>();
             rappers.Add(eminemSwearStats);
             rappers.Add(twoPackStats);
@@ -32,27 +36,12 @@ namespace SongSwears
             //Console.WriteLine(censor.Fix(song.lyrics));
             //eminemSwearStats.ShowSummary();
             Console.ReadLine();
+    /*
+            Console.WriteLine(WebCache.GetOrDownload("https://wtfismyip.com/text"));
+                Console.ReadKey();
+*/
         }
-    }
 
-    public class RaperTinder
-    {
-        private List<RapperSwearStats> rappers;
-        private Song unknowSong;
-
-        public RaperTinder(List<RapperSwearStats> rappers, Song unknowSong)
-        {
-            this.rappers = rappers;
-            this.unknowSong = unknowSong;
-
-            var songSwearStats = new SwearStats();
-            songSwearStats.AddSwearsFrom(unknowSong);
-            foreach(var rapper in rappers)
-            {
-                var score = rapper.FindCommonSwearsScore(songSwearStats);
-                Console.WriteLine(rapper.name + ": " + score + " points.");
-            }
-        }
     }
 
     public class RapperSwearStats: SwearStats
