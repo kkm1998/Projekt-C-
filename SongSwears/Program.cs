@@ -14,8 +14,10 @@ namespace SongSwears
             
             var eminemSwearStats = new RapperSwearStats("Eminem");
             eminemSwearStats.AddSong("Stan");
-            eminemSwearStats.AddSong("Rap God");
+            eminemSwearStats.AddSong("When I'm Gone");
             eminemSwearStats.AddSong("Lose Yourself");
+            eminemSwearStats.AddSong("Not Afraid");
+            eminemSwearStats.AddSong("The Real Slim Shady");
             //var song = new Song("Eminem", "Stan");
             //eminemSwearStats.AddSwearsFrom(song);
             var twoPackStats = new RapperSwearStats("2Pac");
