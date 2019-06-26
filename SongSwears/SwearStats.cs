@@ -33,9 +33,11 @@ namespace SongSwears
                     score++;
                // Console.WriteLine(myWord.Key);
                // else
-                   // score--;
+            
+            // score--;
             }
             return score;
+            
         }
 
         internal void ShowSummary()

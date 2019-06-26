@@ -18,8 +18,12 @@ namespace SongSwears
             foreach(var rapper in rappers)
             {
                 var score = rapper.FindCommonSwearsScore(songSwearStats);
-                Console.WriteLine(rapper.name + ": " + score + " points.");
+                
+                Console.WriteLine("                             "+rapper.name + "{0,50}"," " + score +" points.");
+
+
             }
+            
         }
     }
 }
