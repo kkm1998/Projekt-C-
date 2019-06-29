@@ -28,20 +28,20 @@ namespace SongSwears
             twoPackStats.AddSong("Dear Mama");
             twoPackStats.AddSong("Hail Mary");
             twoPackStats.AddSong("California Love");
-            twoPackStats.AddSong("Me Agaist the World");
+            twoPackStats.AddSong("Good Life");
 
-            var snoopDogStats = new RapperSwearStats("SnoopDog");
+            var snoopDogStats = new RapperSwearStats("Snoop Dog");
             snoopDogStats.AddSong("Lay Low");
             snoopDogStats.AddSong("Vato");
             snoopDogStats.AddSong("Bitch Please");
             snoopDogStats.AddSong("Who Am I");
-            snoopDogStats.AddSong("Dogg Dogg World");
+            snoopDogStats.AddSong("Doggy Dogg World");
 
             var FifCentStats = new RapperSwearStats("50 Cent");
             FifCentStats.AddSong("In Da Club");
             FifCentStats.AddSong("Candy Shop");
             FifCentStats.AddSong("21 Questions");
-            FifCentStats.AddSong("Many Man");
+            FifCentStats.AddSong("Many Men");
             FifCentStats.AddSong("Wanksta");
 
             var WizKhaStats = new RapperSwearStats("Wiz Khalifa");
@@ -68,11 +68,11 @@ namespace SongSwears
             var rappers = new List<RapperSwearStats>();
             rappers.Add(LilWayneStats);
             rappers.Add(eminemSwearStats);
+            rappers.Add(snoopDogStats);
             rappers.Add(FifCentStats);
             rappers.Add(DrDreStats);
             rappers.Add(WizKhaStats);
             rappers.Add(twoPackStats);
-            rappers.Add(snoopDogStats);
 
 
             Console.WriteLine("Podaj tekst piosenki");
